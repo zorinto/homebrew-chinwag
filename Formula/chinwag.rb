@@ -1,8 +1,8 @@
 class Chinwag < Formula
   desc "Read and reply to WhatsApp from the Mac terminal (for WhatsApp Desktop on macOS)"
   homepage "https://github.com/zorinto/chinwag"
-  url "https://github.com/zorinto/chinwag/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "a6ef51df181c026442d00dbf514b41ef866cf532cc1df7a270c2992c92a0831f"
+  url "https://github.com/zorinto/chinwag/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "3ce042aa52cbf7e23c99d88bd85182ef30f4f4d3dfff6fea7308b0e60671bf04"
   license "MIT"
   head "https://github.com/zorinto/chinwag.git", branch: "main"
 
