@@ -1,23 +1,20 @@
+# chinwag's source is private, so this formula installs the prebuilt Apple silicon binary from the npm package.
 class Chinwag < Formula
-  desc "Read and reply to WhatsApp from the Mac terminal (for WhatsApp Desktop on macOS)"
-  homepage "https://github.com/zorinto/chinwag"
-  url "https://github.com/zorinto/chinwag/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "a103bb58ff531e7e47425984ce7da0f2a76eb4a7c076ede1cf06dda2b744dc1e"
-  license "MIT"
-  head "https://github.com/zorinto/chinwag.git", branch: "main"
+  desc "Read, reply to and manage WhatsApp Desktop chats from the Mac terminal"
+  homepage "https://www.npmjs.com/package/@zorinto/chinwag"
+  url "https://registry.npmjs.org/@zorinto/chinwag/-/chinwag-0.3.0.tgz"
+  sha256 "1fe8ae5d003586efbb641724bb37b78fd30f417d67a8b668e3b59938b8d3b027"
+  license :cannot_represent
 
+  depends_on arch: :arm64
   depends_on :macos
-  # The Swift toolchain from the Command Line Tools is enough; `depends_on xcode: :build` would demand
-  # the full Xcode app.
-  uses_from_macos "swift" => :build
 
   def install
-    system "swift", "build", "-c", "release", "--disable-sandbox"
-    bin.install ".build/release/chinwag"
+    bin.install "vendor/chinwag"
+    prefix.install "LICENSE"
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/chinwag --version")
-    assert_match "Read and reply to WhatsApp", shell_output("#{bin}/chinwag --help")
   end
 end
