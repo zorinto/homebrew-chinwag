@@ -2,8 +2,8 @@
 class Chinwag < Formula
   desc "Read, reply to and manage WhatsApp Desktop chats from the Mac terminal"
   homepage "https://www.npmjs.com/package/@zorinto/chinwag"
-  url "https://registry.npmjs.org/@zorinto/chinwag/-/chinwag-0.3.0.tgz"
-  sha256 "1fe8ae5d003586efbb641724bb37b78fd30f417d67a8b668e3b59938b8d3b027"
+  url "https://registry.npmjs.org/@zorinto/chinwag/-/chinwag-0.4.0.tgz"
+  sha256 "5cc521b57aea76b87384c162fafef0f27b5e6e67d2517ec7c5e2619c37de1ddc"
   license :cannot_represent
 
   depends_on arch: :arm64
